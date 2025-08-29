@@ -37,6 +37,7 @@ Route::delete('/posts/{post}',[PostController::class, 'destroy'])->name('posts.d
 //2- operations on database (insert record, edit record, delete record)
 
 // Test Routes
+Route::get('/test', [TestController::class, 'testAction']);
 Route::get('/tests', [TestController::class, 'index'])->name('tests.index');
 Route::get('/tests/create', [TestController::class, 'create'])->name('tests.create');
 Route::post('/tests', [TestController::class, 'store'])->name('tests.store');
