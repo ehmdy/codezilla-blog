@@ -1,6 +1,7 @@
 <?php
 
-use App\Http\Controllers\PostController;
+use App\Http\Controllers\PostController; 
+use App\Http\Controllers\TestController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -34,3 +35,9 @@ Route::delete('/posts/{post}',[PostController::class, 'destroy'])->name('posts.d
 
 //1- structure change for database (create table , edit column , remove column)
 //2- operations on database (insert record, edit record, delete record)
+
+// Test Routes
+Route::get('/tests', [TestController::class, 'index'])->name('tests.index');
+Route::get('/tests/create', [TestController::class, 'create'])->name('tests.create');
+Route::post('/tests', [TestController::class, 'store'])->name('tests.store');
+Route::get('/tests/{id}', [TestController::class, 'show'])->name('tests.show');
